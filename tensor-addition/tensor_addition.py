@@ -32,7 +32,8 @@ def add(x, y):
 
 
 def compile_extension():
-    cuda_source = Path("add_kernel.cu").read_text()
+    # cuda_source = Path("add_kernel.cu").read_text()
+    cuda_source = Path("add_kernel_2d.cu").read_text()
     cpp_source = "torch::Tensor add_in_cuda(torch::Tensor tensor1, torch::Tensor tensor2);"
 
     # Load the CUDA kernel as a PyTorch extension
@@ -56,6 +57,7 @@ def main():
     b = torch.rand((h, w))
     a = a.to(device='cuda')
     b = b.to(device='cuda')
+    print(f"shape of a and b are", a.shape, b.shape)
     tik = time.time()
     res = ext.add_in_cuda(a, b).cpu()
     tok = time.time()
@@ -72,3 +74,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
