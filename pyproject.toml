@@ -1,0 +1,11 @@
+[project]
+name = "cuda-programming"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "jupyterlab-vim>=4.1.4",
+    "numpy>=2.2.2",
+    "torch>=2.6.0",
+]
