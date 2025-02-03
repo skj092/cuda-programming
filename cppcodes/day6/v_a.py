@@ -9,53 +9,37 @@ def cdiv(a, b):
     return (a+b-1)//b
 
 
-m1 = torch.rand(5120, 256)
-m1s = m1[:4]
-m2 = torch.rand(256, 5120)
-m2s = m2[:, :4]
+N = 8
+a = torch.arange(N).float()
+b = torch.arange(N, N + N).float()
 
 
 def blk_kernel2d_shar(f, blocks, threads, sh_sz, *args, **kwargs):
-    for i0 in range(blocks.y):
-        for i1 in range(blocks.x):
-            shared = torch.zeros(sh_sz)
-            f(dim3(i1, i0), threads, shared, *args, **kwargs)
+    for i1 in range(blocks.x):
+        shared = torch.zeros(sh_sz)
+        f(dim3(i1), threads, shared, *args, **kwargs)
 
 
-def matmul_tiled_bk(blockIdx, blockDim, shared, m, n, out, h, w, k, tw):
-    shar_sz = tw*tw
-    ms, ns = shared[:shar_sz], shared[shar_sz:]
+def matmul_tiled_bk(blockIdx, blockDim, shared, m, n, out, N, tw):
+    ms, ns = shared[:tw], shared[tw:]
 
-    for ph in range(cdiv(k, tw)):
-        idx = ph*tw
-        # fill shared
-        for tr in range(blockDim.y):
-            for tc in range(blockDim.x):
-                r, c = blockIdx.y*blockDim.y + tr, blockIdx.x*blockDim.x + tc
-                ms[tr*tw+tc] = m[tc+idx + r*k] if r < h and idx+tc < k else 0.
-                ns[tr*tw+tc] = n[(tr+idx)*w + c] if c < w and idx + \
-                    tr < k else 0.
-
-        # do dotprods from shared
-        for tr in range(blockDim.y):
-            for tc in range(blockDim.x):
-                r, c = blockIdx.y*blockDim.y + tr, blockIdx.x*blockDim.x + tc
-                for i in range(tw):
-                    if r*w+c < len(out):
-                        out[r*w+c] += ms[tr*tw+i] * ns[tw*i+tc]
+    # update ms and ns
+    for tc in range(N/tw):
+        idx = blockIdx.x
+        ms[tc] =
+        ns[tc] =
 
 
-def matmul_2d(m, n, tw=16):
-    h, k = m.shape
-    k2, w = n.shape
+def matmul_2d(m, n, tw=4):
+    k = len(m)
+    k2 = len(n)
     assert k == k2, "Size mismatch!"
-    output = torch.zeros(h, w, dtype=m.dtype)
-    tpb = dim3(tw, tw)
-    blocks = dim3(cdiv(w, tpb.x), cdiv(h, tpb.y))
-    blk_kernel2d_shar(matmul_tiled_bk, blocks, tpb, tw*tw*2,
-                      m.flatten(), n.flatten(), output.flatten(),
-                      h, w, k, tw=tw)
+    output = torch.zeros(k, dtype=m.dtype)
+    tpb = dim3(tw)
+    blocks = dim3(cdiv(k, tpb.x))
+    blk_kernel2d_shar(matmul_tiled_bk, blocks, tpb, tw*2,
+                      m.flatten(), n.flatten(), output.flatten(), N, tw=tw)
     return output
 
 
-print(torch.isclose(matmul_2d(m1s, m2s, tw=16), m1s@m2s).all())
+print(torch.isclose(matmul_2d(a, b), a+b).all())
