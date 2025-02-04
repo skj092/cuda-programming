@@ -7,33 +7,35 @@ Resources:
 3. Jeremy Haward 2 lectures
 4. PMPP Book
 
-Day1: 28 Jan, 2025
+[Day1](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day1): 28 Jan, 2025
 - Watched FreeCodeCamp CUDA lecture till Chapter 3 (1:36:48).
 - Find resources for writing cuda program.
+- Hello world in cuda
+- Copy one array to another in cuda
 
-Day 2:
+[Day 2](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day2):
 - Add two vector
 
-Day 3:
+[Day 3](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day2):
 - Fine square of every element of a metrix.
 
-Day 4:
+[Day 4](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day4):
 - Element wise multiple two metrix.
 - Neive Matrix Multiplication
 
-Day 5:
+[Day 5](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day5):
 - Solve all the problems of Chapter 3: PMPP
 
-Day 6:
+[Day 6](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day6):
 - Add two vector using shared memory (failed).
 - Add two matrix using shared memory (failed).
 - Print Device properties
 
-Day 7:
+[Day 7](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day7):
 - Add two vector using shared memory in python.
 - Add two vector using shared memory in python.
 
-Day 8:
+[Day 8](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day8):
 - Add two vector using shared memory in cuda.
 - Add two vector using shared memory in cuda.
 
