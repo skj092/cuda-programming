@@ -39,3 +39,7 @@ Resources:
 - Add two vector using shared memory in cuda.
 - Add two vector using shared memory in cuda.
 
+[Day 9](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day9):
+- Tried matrix multiplicationusing shared memory - failed
+- I need more clearity on index mapping, tomorrow I'll again start writing python and will solve simple problem using shared memory.
+
