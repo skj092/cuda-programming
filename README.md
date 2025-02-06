@@ -43,3 +43,8 @@ Resources:
 - Tried matrix multiplicationusing shared memory - failed
 - I need more clearity on index mapping, tomorrow I'll again start writing python and will solve simple problem using shared memory.
 
+[Day 10](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day10):
+- Shared memory metrix index can be accessed using double index format like m[i][j]
+- Used double index format to add two matrix using shared memory.
+- Tried and failed to add two metrix take tile pair like multiplication but instead of multiplication just add them.
+- There are two way to use shared memory, dynamic and static.
