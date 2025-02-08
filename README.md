@@ -48,3 +48,11 @@ Resources:
 - Used double index format to add two matrix using shared memory.
 - Tried and failed to add two metrix take tile pair like multiplication but instead of multiplication just add them.
 - There are two way to use shared memory, dynamic and static.
+
+[Day 11](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day11):
+- Tried to understand the index patter mapping for tile matrix additiong and multiplication.
+
+[Day 12](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day12):
+- Matrix addition using shared matrix, understood clearly.
+- Writing shared matrix multiplication, but there are some bug, will keep working on it.
+
