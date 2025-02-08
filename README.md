@@ -54,5 +54,5 @@ Resources:
 
 [Day 12](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day12):
 - Matrix addition using shared matrix, understood clearly.
-- Writing shared matrix multiplication, but there are some bug, will keep working on it.
+- Matrix multiplication, using shared memory
 
