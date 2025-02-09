@@ -56,3 +56,5 @@ Resources:
 - Matrix addition using shared matrix, understood clearly.
 - Matrix multiplication, using shared memory
 
+[Day 13](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day13):
+- Softmax of a matrix in python and c
