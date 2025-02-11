@@ -59,5 +59,8 @@ Resources:
 [Day 13](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day13):
 - Softmax of a matrix in python and c
 
-[Day 14](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day13):
+[Day 14](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day14):
 - Softmax for matrix in CUDA, use thread for each vector in matrix.
+
+[Day 15](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day15):
+- Implenented online softmax in python: https://arxiv.org/pdf/1805.02867
