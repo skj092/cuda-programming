@@ -63,4 +63,7 @@ Resources:
 - Softmax for matrix in CUDA, use thread for each vector in matrix.
 
 [Day 15](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day15):
-- Implenented online softmax in python: https://arxiv.org/pdf/1805.02867
+- Implemented online softmax in python: https://arxiv.org/pdf/1805.02867
+
+[Day 16](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day16):
+- Implemented online softmax in c and cuda
