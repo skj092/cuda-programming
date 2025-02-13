@@ -67,3 +67,7 @@ Resources:
 
 [Day 16](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day16):
 - Implemented online softmax in c and cuda
+
+[Day 17](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day17):
+- Profiler setup on softmax
+- PyTorch setup for cpp
