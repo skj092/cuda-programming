@@ -71,3 +71,5 @@ Resources:
 [Day 17](https://github.com/skj092/cuda-programming/tree/main/30-day-challenge/day17):
 - Profiler setup on softmax
 - PyTorch setup for cpp
+
+Day 18 : PMPP Chapter 6 half
