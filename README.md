@@ -73,4 +73,7 @@ Resources:
 - PyTorch setup for cpp
 
 Day 18 : PMPP Chapter 6 half
+
 Day 19 : PMPP chapter 6
+
+Day 20 : Reading blog of softmax optimization on cuda by maharshi
